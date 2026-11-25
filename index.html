@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SNOMED CT Implementation Playbooks - practical guides for implementing SNOMED CT by use case, capability, or role.">
+  <title>SNOMED CT Implementation Playbooks</title>
+  <link rel="icon" href="favicon.jpg" type="image/jpeg" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg" type="image/jpeg" sizes="180x180">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────── -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="#/" class="header-logo" aria-label="SNOMED CT Implementation Playbooks - home">
+      <img src="SI_logo.jpg" alt="SNOMED International" height="40" style="flex-shrink:0;display:block">
+      <span class="logo-product">Implementation Playbooks</span>
+    </a>
+
+    <nav class="header-nav" aria-label="Perspectives">
+      <a href="#/browse/capability">Implementation questions</a>
+      <a href="#/playbooks">Playbooks</a>
+      <a href="#/browse/role">Roles</a>
+    </nav>
+
+    <div class="header-search" role="search">
+      <span class="search-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search…"
+        aria-label="Search"
+        aria-autocomplete="list"
+        aria-controls="search-results"
+        autocomplete="off"
+      >
+      <div id="search-results" class="search-results" role="listbox" aria-label="Search suggestions"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────────────────── -->
+<main id="main" role="main">
+
+  <!-- Landing view -->
+  <div id="view-landing" class="view">
+    <div class="landing-hero">
+      <div class="hero-bg-illustration" aria-hidden="true">
+        <svg viewBox="0 0 1600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Root → L1 edges -->
+          <line x1="800" y1="300" x2="400" y2="140" stroke="white" stroke-width="1.5" opacity="0.35"/>
+          <line x1="800" y1="300" x2="650" y2="110" stroke="white" stroke-width="1.5" opacity="0.35"/>
+          <line x1="800" y1="300" x2="960" y2="110" stroke="white" stroke-width="1.5" opacity="0.35"/>
+          <line x1="800" y1="300" x2="1180" y2="150" stroke="white" stroke-width="1.5" opacity="0.35"/>
+          <line x1="800" y1="300" x2="580" y2="440" stroke="white" stroke-width="1.5" opacity="0.35"/>
+          <line x1="800" y1="300" x2="1050" y2="460" stroke="white" stroke-width="1.5" opacity="0.35"/>
+          <line x1="800" y1="300" x2="230" y2="320" stroke="white" stroke-width="1.5" opacity="0.3"/>
+          <line x1="800" y1="300" x2="1380" y2="280" stroke="white" stroke-width="1.5" opacity="0.3"/>
+          <!-- L1 → L2 edges -->
+          <line x1="400" y1="140" x2="220" y2="60" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="400" y1="140" x2="310" y2="40" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="400" y1="140" x2="490" y2="50" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="400" y1="140" x2="290" y2="200" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="650" y1="110" x2="580" y2="40" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="650" y1="110" x2="740" y2="45" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="650" y1="110" x2="550" y2="200" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="960" y1="110" x2="870" y2="40" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="960" y1="110" x2="1060" y2="45" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="960" y1="110" x2="1020" y2="200" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1180" y1="150" x2="1100" y2="60" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1180" y1="150" x2="1280" y2="70" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1180" y1="150" x2="1310" y2="190" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="580" y1="440" x2="460" y2="510" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="580" y1="440" x2="540" y2="560" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="580" y1="440" x2="680" y2="530" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1050" y1="460" x2="970" y2="550" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1050" y1="460" x2="1120" y2="540" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1050" y1="460" x2="1180" y2="490" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="230" y1="320" x2="100" y2="270" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="230" y1="320" x2="80" y2="370" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="230" y1="320" x2="160" y2="430" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="230" y1="320" x2="330" y2="410" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1380" y1="280" x2="1480" y2="200" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1380" y1="280" x2="1520" y2="310" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1380" y1="280" x2="1460" y2="380" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <line x1="1380" y1="280" x2="1280" y2="380" stroke="white" stroke-width="0.9" opacity="0.2"/>
+          <!-- L2 → L3 edges (faint) -->
+          <line x1="220" y1="60" x2="140" y2="20" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="220" y1="60" x2="180" y2="110" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="310" y1="40" x2="260" y2="10" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="490" y1="50" x2="530" y2="10" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="290" y1="200" x2="200" y2="240" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="290" y1="200" x2="240" y2="160" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="580" y1="40" x2="540" y2="10" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="740" y1="45" x2="790" y2="10" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="550" y1="200" x2="500" y2="250" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="870" y1="40" x2="830" y2="10" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1060" y1="45" x2="1110" y2="10" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1020" y1="200" x2="1080" y2="240" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1100" y1="60" x2="1050" y2="20" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1280" y1="70" x2="1340" y2="30" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1310" y1="190" x2="1390" y2="160" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="460" y1="510" x2="390" y2="570" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="540" y1="560" x2="490" y2="590" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="680" y1="530" x2="730" y2="580" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="970" y1="550" x2="920" y2="590" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1120" y1="540" x2="1160" y2="585" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1180" y1="490" x2="1260" y2="530" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="100" y1="270" x2="40" y2="240" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="80" y1="370" x2="20" y2="400" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="160" y1="430" x2="90" y2="480" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="330" y1="410" x2="280" y2="470" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1480" y1="200" x2="1550" y2="160" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1520" y1="310" x2="1580" y2="290" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1460" y1="380" x2="1540" y2="420" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <line x1="1280" y1="380" x2="1210" y2="440" stroke="white" stroke-width="0.6" opacity="0.12"/>
+          <!-- Root node -->
+          <circle cx="800" cy="300" r="22" fill="#00A9E0" opacity="0.45"/>
+          <circle cx="800" cy="300" r="13" fill="#00A9E0" opacity="0.75"/>
+          <!-- L1 nodes -->
+          <circle cx="400"  cy="140" r="14" fill="white" opacity="0.28"/>
+          <circle cx="650"  cy="110" r="14" fill="white" opacity="0.28"/>
+          <circle cx="960"  cy="110" r="14" fill="white" opacity="0.28"/>
+          <circle cx="1180" cy="150" r="14" fill="white" opacity="0.28"/>
+          <circle cx="580"  cy="440" r="14" fill="white" opacity="0.28"/>
+          <circle cx="1050" cy="460" r="14" fill="white" opacity="0.28"/>
+          <circle cx="230"  cy="320" r="14" fill="white" opacity="0.24"/>
+          <circle cx="1380" cy="280" r="14" fill="white" opacity="0.24"/>
+          <!-- L2 nodes -->
+          <circle cx="220"  cy="60"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="310"  cy="40"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="490"  cy="50"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="290"  cy="200" r="8" fill="white" opacity="0.18"/>
+          <circle cx="580"  cy="40"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="740"  cy="45"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="550"  cy="200" r="8" fill="white" opacity="0.18"/>
+          <circle cx="870"  cy="40"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="1060" cy="45"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="1020" cy="200" r="8" fill="white" opacity="0.18"/>
+          <circle cx="1100" cy="60"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="1280" cy="70"  r="8" fill="white" opacity="0.18"/>
+          <circle cx="1310" cy="190" r="8" fill="white" opacity="0.18"/>
+          <circle cx="460"  cy="510" r="8" fill="white" opacity="0.18"/>
+          <circle cx="540"  cy="560" r="8" fill="white" opacity="0.18"/>
+          <circle cx="680"  cy="530" r="8" fill="white" opacity="0.18"/>
+          <circle cx="970"  cy="550" r="8" fill="white" opacity="0.18"/>
+          <circle cx="1120" cy="540" r="8" fill="white" opacity="0.18"/>
+          <circle cx="1180" cy="490" r="8" fill="white" opacity="0.18"/>
+          <circle cx="100"  cy="270" r="8" fill="white" opacity="0.15"/>
+          <circle cx="80"   cy="370" r="8" fill="white" opacity="0.15"/>
+          <circle cx="160"  cy="430" r="8" fill="white" opacity="0.15"/>
+          <circle cx="330"  cy="410" r="8" fill="white" opacity="0.15"/>
+          <circle cx="1480" cy="200" r="8" fill="white" opacity="0.15"/>
+          <circle cx="1520" cy="310" r="8" fill="white" opacity="0.15"/>
+          <circle cx="1460" cy="380" r="8" fill="white" opacity="0.15"/>
+          <circle cx="1280" cy="380" r="8" fill="white" opacity="0.15"/>
+          <!-- L3 nodes (smallest) -->
+          <circle cx="140"  cy="20"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="180"  cy="110" r="5" fill="white" opacity="0.1"/>
+          <circle cx="260"  cy="10"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="530"  cy="10"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="200"  cy="240" r="5" fill="white" opacity="0.1"/>
+          <circle cx="240"  cy="160" r="5" fill="white" opacity="0.1"/>
+          <circle cx="540"  cy="10"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="790"  cy="10"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="500"  cy="250" r="5" fill="white" opacity="0.1"/>
+          <circle cx="830"  cy="10"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="1110" cy="10"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="1080" cy="240" r="5" fill="white" opacity="0.1"/>
+          <circle cx="1050" cy="20"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="1340" cy="30"  r="5" fill="white" opacity="0.1"/>
+          <circle cx="1390" cy="160" r="5" fill="white" opacity="0.1"/>
+          <circle cx="390"  cy="570" r="5" fill="white" opacity="0.1"/>
+          <circle cx="490"  cy="590" r="5" fill="white" opacity="0.1"/>
+          <circle cx="730"  cy="580" r="5" fill="white" opacity="0.1"/>
+          <circle cx="920"  cy="590" r="5" fill="white" opacity="0.1"/>
+          <circle cx="1160" cy="585" r="5" fill="white" opacity="0.1"/>
+          <circle cx="1260" cy="530" r="5" fill="white" opacity="0.1"/>
+          <circle cx="40"   cy="240" r="5" fill="white" opacity="0.1"/>
+          <circle cx="20"   cy="400" r="5" fill="white" opacity="0.1"/>
+          <circle cx="90"   cy="480" r="5" fill="white" opacity="0.1"/>
+          <circle cx="280"  cy="470" r="5" fill="white" opacity="0.1"/>
+          <circle cx="1550" cy="160" r="5" fill="white" opacity="0.1"/>
+          <circle cx="1580" cy="290" r="5" fill="white" opacity="0.1"/>
+          <circle cx="1540" cy="420" r="5" fill="white" opacity="0.1"/>
+          <circle cx="1210" cy="440" r="5" fill="white" opacity="0.1"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <div class="hero-label">SNOMED CT</div>
+            <h1 class="hero-title">Implementation<br>Playbooks</h1>
+            <p class="hero-subtitle">Practical guides for clinicians, software providers, information managers, and governance leads involved in SNOMED CT implementation.</p>
+            <a href="#/playbooks" class="hero-cta">Explore the playbooks →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-body">
+      <div class="container">
+        <p class="section-label">Where are you starting from?</p>
+        <div id="entry-grid" class="entry-grid" role="list"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Browse view -->
+  <div id="view-browse" class="view">
+    <div class="container">
+      <div class="browse-header">
+        <h2 id="browse-title" class="browse-title"></h2>
+        <p id="browse-subtitle" class="browse-subtitle"></p>
+      </div>
+      <div id="role-intros" style="display:none"></div>
+      <div id="filter-bar" class="filter-bar" role="toolbar" aria-label="Filter by category"></div>
+      <div id="question-list" class="question-list" role="list"></div>
+    </div>
+  </div>
+
+  <!-- Playbook view -->
+  <div id="view-playbook" class="view">
+    <div class="container" style="padding-top: 24px; padding-bottom: 48px;">
+      <button id="playbook-back" class="back-btn" aria-label="Go back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+        </svg>
+        Back
+      </button>
+      <div id="playbook-content"></div>
+    </div>
+  </div>
+
+  <!-- Question answer view -->
+  <div id="view-question" class="view">
+    <div class="container" style="padding-top:24px;padding-bottom:48px">
+      <button id="question-back" class="back-btn" aria-label="Go back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Back to questions
+      </button>
+      <div id="question-content"></div>
+    </div>
+  </div>
+
+  <!-- All playbooks view -->
+  <div id="view-all-playbooks" class="view">
+    <div class="pb-overview-hero">
+      <div class="container">
+        <div class="pb-overview-hero-inner">
+          <div>
+            <div class="hero-label" style="text-align:left;margin-bottom:8px">SNOMED CT implementation playbooks</div>
+            <h1 class="pb-overview-title">What is a playbook?</h1>
+            <p class="pb-overview-intro">A playbook is a practical, structured guide for implementing SNOMED CT in a specific context. Rather than theory, each playbook answers: <em>"What do I need to decide, build, and do - and in what order?"</em></p>
+          </div>
+          <div class="pb-overview-pillars">
+            <div class="pb-overview-pillar">
+              <span class="pb-overview-pillar-icon">🎯</span>
+              <div class="pb-overview-pillar-label">Key decisions</div>
+              <div class="pb-overview-pillar-desc">Critical choices with options and trade-offs</div>
+            </div>
+            <div class="pb-overview-pillar">
+              <span class="pb-overview-pillar-icon">🪜</span>
+              <div class="pb-overview-pillar-label">Implementation steps</div>
+              <div class="pb-overview-pillar-desc">What to do first, next, and why</div>
+            </div>
+            <div class="pb-overview-pillar">
+              <span class="pb-overview-pillar-icon">🔗</span>
+              <div class="pb-overview-pillar-label">Dependencies</div>
+              <div class="pb-overview-pillar-desc">What you need in place before you start</div>
+            </div>
+            <div class="pb-overview-pillar">
+              <span class="pb-overview-pillar-icon">⚠️</span>
+              <div class="pb-overview-pillar-label">Common pitfalls</div>
+              <div class="pb-overview-pillar-desc">What typically goes wrong and how to avoid it</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="padding-top:40px;padding-bottom:56px">
+      <div id="pb-filter-bar" class="filter-bar" role="toolbar" aria-label="Filter playbooks by role" style="margin-bottom:24px"></div>
+      <div id="all-playbooks-grid"></div>
+    </div>
+  </div>
+
+  <!-- Demonstrators view -->
+  <div id="view-demonstrators" class="view">
+    <div class="container" style="padding-top:40px;padding-bottom:56px">
+      <div class="browse-header">
+        <h2 class="browse-title">Demonstrators &amp; Tools</h2>
+        <p class="browse-subtitle">Open-source SNOMED CT implementation demos and utilities. Each links to a live application.</p>
+      </div>
+      <div id="demonstrators-content"></div>
+    </div>
+  </div>
+
+  <!-- Search results page -->
+  <div id="view-search" class="view">
+    <div class="container" style="padding-top: 32px; padding-bottom: 48px;">
+      <a href="#/" class="back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+        </svg>
+        Home
+      </a>
+      <div class="search-page-header">
+        <h2 id="search-page-title" class="search-page-title"></h2>
+        <p id="search-page-sub" class="search-page-sub"></p>
+      </div>
+      <div id="search-results-main"></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>
+      © SNOMED International ·
+      <a href="https://www.snomed.org" target="_blank" rel="noopener">snomed.org</a> ·
+      <a href="https://docs.snomed.org" target="_blank" rel="noopener">docs.snomed.org</a> ·
+      <a href="#" id="draft-access-link" style="color:var(--text-muted);font-size:11px">Preview drafts</a>
+    </p>
+  </div>
+</footer>
+
+
+<!-- ── Example popup modal ─────────────────────────────────────────────── -->
+<div id="example-modal" class="example-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="example-modal-title" hidden>
+  <div class="example-modal-box">
+    <div class="example-modal-header">
+      <span id="example-modal-title" class="example-modal-title"></span>
+      <button class="example-modal-close" aria-label="Close example">&times;</button>
+    </div>
+    <div class="example-modal-body">
+      <pre class="example-modal-pre"><code id="example-modal-code"></code></pre>
+    </div>
+    <div class="example-modal-footer">
+      <button class="example-copy-btn" id="example-copy-btn">Copy</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<div id="draft-pin-overlay" class="draft-pin-overlay" hidden>
+  <div class="draft-pin-box" role="dialog" aria-modal="true" aria-labelledby="draft-pin-title">
+    <div class="draft-pin-title" id="draft-pin-title">Preview drafts</div>
+    <p class="draft-pin-desc">Enter the access PIN to view draft playbooks.</p>
+    <input id="draft-pin-input" class="draft-pin-input" type="password" placeholder="PIN" autocomplete="off" />
+    <p id="draft-pin-error" class="draft-pin-error" hidden>Incorrect PIN - try again.</p>
+    <div class="draft-pin-actions">
+      <button id="draft-pin-cancel" class="draft-pin-btn draft-pin-btn-cancel">Cancel</button>
+      <button id="draft-pin-submit" class="draft-pin-btn draft-pin-btn-submit">Unlock</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
